@@ -49,23 +49,23 @@ module.exports = {
     				};
 
 
-              var mage = parseInt(data);
-              if(mage==1){
-                res = {
-          				response:
-          				[{
-          					playtext: 'You are an ADULT.'
-          				}]
-          			};
-              }
-              else{
-                res = {
-          				response:
-          				[{
-          					playtext: 'Minors are NOT ALLOWED.'
-          				}]
-          			};
-              }
+              // var mage = parseInt(data);
+              // if(mage==1){
+              //   res = {
+          		// 		response:
+          		// 		[{
+          		// 			playtext: 'You are an ADULT.'
+          		// 		}]
+          		// 	};
+              // }
+              // else{
+              //   res = {
+          		// 		response:
+          		// 		[{
+          		// 			playtext: 'Minors are NOT ALLOWED.'
+          		// 		}]
+          		// 	};
+              // }
 
           }
 
@@ -86,23 +86,23 @@ module.exports = {
     				};
 
 
-              var fage = parseInt(data);
-              if(fage==1){
-                res = {
-          				response:
-          				[{
-          					playtext: 'You are an ADULT.'
-          				}]
-          			};
-              }
-              else{
-                res = {
-          				response:
-          				[{
-          					playtext: 'Minors are NOT ALLOWED.'
-          				}]
-          			};
-              }
+              // var fage = parseInt(data);
+              // if(fage==1){
+              //   res = {
+          		// 		response:
+          		// 		[{
+          		// 			playtext: 'You are an ADULT.'
+          		// 		}]
+          		// 	};
+              // }
+              // else{
+              //   res = {
+          		// 		response:
+          		// 		[{
+          		// 			playtext: 'Minors are NOT ALLOWED.'
+          		// 		}]
+          		// 	};
+              // }
 
 
           }
