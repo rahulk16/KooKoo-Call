@@ -8,8 +8,8 @@ function getXMLResponse(response) {
 module.exports = {
 	getXMLBody : function createResponse(req) {
 		var event = req.query.event;
-		// var data = req.query.data || '';
-		// var cid = req.query.cid;
+		var data = req.query.data || '';
+		var cid = req.query.cid;
 		var res;
 		if(event){
 			if (event == 'NewCall') {
@@ -28,7 +28,7 @@ module.exports = {
 					]}]
 				};
 			}
-			const data = req.query.data;
+
       else if(event=='GotDTMF'){
         if(data){
           var gender = parseInt(data);
@@ -47,9 +47,9 @@ module.exports = {
     						}
     					]}]
     				};
-						const data1 = req.query.data;
-            if(data1){
-              var mage = parseInt(data1);
+
+
+              var mage = parseInt(data);
               if(mage==1){
                 res = {
           				response:
@@ -66,10 +66,10 @@ module.exports = {
           				}]
           			};
               }
-            }
+
           }
 
-          if(gender==2){ //female
+        else if(gender==2){ //female
             res = {
     					response:
     					[{
@@ -84,9 +84,9 @@ module.exports = {
     						}
     					]}]
     				};
-						const data2 = req.query.data;
-            if(data2){
-              var fage = parseInt(data2);
+
+
+              var fage = parseInt(data);
               if(fage==1){
                 res = {
           				response:
@@ -103,7 +103,7 @@ module.exports = {
           				}]
           			};
               }
-            }
+
 
           }
         }
