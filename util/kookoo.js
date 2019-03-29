@@ -30,8 +30,10 @@ module.exports = {
 			}
 
       else if(event=='GotDTMF'){
+				// var data = req.query.data || '';
         if(data){
           var gender = parseInt(data);
+					data = '';
           if(gender==1){ //male
             res = {
     					response:
@@ -47,7 +49,7 @@ module.exports = {
     						}
     					]}]
     				};
-
+						data = req.query.data;
             if(data){
               var age = parseInt(data);
               if(age==1){
@@ -68,6 +70,7 @@ module.exports = {
               }
             }
           }
+
           if(gender==2){ //female
             res = {
     					response:
@@ -83,7 +86,7 @@ module.exports = {
     						}
     					]}]
     				};
-
+						data = req.query.data;
             if(data){
               var age = parseInt(data);
               if(age==1){
