@@ -50,7 +50,7 @@ module.exports = {
 
             if(data){
               var age = parseInt(data);
-              if(age>21){
+              if(age==1){
                 res = {
           				response:
           				[{
