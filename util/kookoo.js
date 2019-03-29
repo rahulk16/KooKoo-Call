@@ -47,6 +47,26 @@ module.exports = {
     						}
     					]}]
     				};
+
+            if(data){
+              var age = parseInt(data);
+              if(age>21){
+                res = {
+          				response:
+          				[{
+          					playtext: 'You are an ADULT.'
+          				}]
+          			};
+              }
+              else{
+                res = {
+          				response:
+          				[{
+          					playtext: 'Minors are NOT ALLOWED.'
+          				}]
+          			};
+              }
+            }
           }
           if(gender==2){ //female
             res = {
@@ -63,6 +83,26 @@ module.exports = {
     						}
     					]}]
     				};
+
+            if(data){
+              var age = parseInt(data);
+              if(age>18){
+                res = {
+          				response:
+          				[{
+          					playtext: 'You are an ADULT.'
+          				}]
+          			};
+              }
+              else{
+                res = {
+          				response:
+          				[{
+          					playtext: 'Minors are NOT ALLOWED.'
+          				}]
+          			};
+              }
+            }
 
           }
         }
