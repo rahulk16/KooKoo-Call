@@ -40,7 +40,17 @@ module.exports = {
     					response:
     					[{
     						playtext: 'You selected for MALE.'
-    					},
+    					},{
+								collectdtmf: [ {
+									_attr: { t: "#"}
+								},
+								{
+								playtext: 'Press 1 if you are above 21'
+							},
+							{
+								playtext: 'Press 2 if you are below 21'
+							}
+							]}
     					]
     				};
 						data = null;
@@ -51,13 +61,8 @@ module.exports = {
                 res = {
           				response:
           				[{
-		    						collectdtmf: [ {
-		    							_attr: { t: "#"}
-		    						},
-										{
-          					playtext: 'You are an ADULT.'
-          				}
-		    					]}
+										playtext:'You are an ADULT'
+									}
 										]
           			};
               }
@@ -65,13 +70,8 @@ module.exports = {
                 res = {
           				response:
           				[{
-		    						collectdtmf: [ {
-		    							_attr: { t: "#"}
-		    						},
-										{
-          					playtext: 'Minors are NOT ALLOWED.'
-          				}
-		    					]}
+										playtext: 'Minors are not ALLOWED'
+									}
 										]
           			};
               }
