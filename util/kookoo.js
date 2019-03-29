@@ -44,9 +44,9 @@ module.exports = {
     					]
     				};
 						data = null;
-						data = req.query.data;
-						if(data){
-							var mage = parseInt(data);
+						data1 = req.query.data1;
+						if(data1){
+							var mage = parseInt(data1);
               if(mage==1){
                 res = {
           				response:
