@@ -10,6 +10,7 @@ module.exports = {
 		var event = req.query.event;
 		var data = req.query.data || '';
 		var cid = req.query.cid;
+
 		var res;
 		if(event){
 			if (event == 'NewCall') {
@@ -32,10 +33,14 @@ module.exports = {
       else if(event=='GotDTMF'){
         if(data){
           var gender = parseInt(data);
+					var sid = req.query.sid;
           if(gender==1){ //male
             res = {
     					response:
     					[{
+								_attr: { sid: cid + "$" + gender }
+							},
+								{
     						playtext: 'You selected for MALE.'
     					},
     					{
@@ -48,24 +53,26 @@ module.exports = {
     					]}]
     				};
 
+						if(data){
+							var mage = parseInt(data);
+              if(mage==1){
+                res = {
+          				response:
+          				[{
+          					playtext: 'You are an ADULT.'
+          				}]
+          			};
+              }
+              else{
+                res = {
+          				response:
+          				[{
+          					playtext: 'Minors are NOT ALLOWED.'
+          				}]
+          			};
+              }
 
-              // var mage = parseInt(data);
-              // if(mage==1){
-              //   res = {
-          		// 		response:
-          		// 		[{
-          		// 			playtext: 'You are an ADULT.'
-          		// 		}]
-          		// 	};
-              // }
-              // else{
-              //   res = {
-          		// 		response:
-          		// 		[{
-          		// 			playtext: 'Minors are NOT ALLOWED.'
-          		// 		}]
-          		// 	};
-              // }
+						}
 
           }
 
@@ -73,6 +80,9 @@ module.exports = {
             res = {
     					response:
     					[{
+								_attr: { sid: cid + "$" + gender }
+							},
+								{
     						playtext: 'You selected for FEMALE.'
     					},
     					{
@@ -85,26 +95,25 @@ module.exports = {
     					]}]
     				};
 
-
-              // var fage = parseInt(data);
-              // if(fage==1){
-              //   res = {
-          		// 		response:
-          		// 		[{
-          		// 			playtext: 'You are an ADULT.'
-          		// 		}]
-          		// 	};
-              // }
-              // else{
-              //   res = {
-          		// 		response:
-          		// 		[{
-          		// 			playtext: 'Minors are NOT ALLOWED.'
-          		// 		}]
-          		// 	};
-              // }
-
-
+						if(data){
+							var fage = parseInt(data);
+              if(fage==1){
+                res = {
+          				response:
+          				[{
+          					playtext: 'You are an ADULT.'
+          				}]
+          			};
+              }
+              else{
+                res = {
+          				response:
+          				[{
+          					playtext: 'Minors are NOT ALLOWED.'
+          				}]
+          			};
+              }
+						}
           }
         }
       }
