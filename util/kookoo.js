@@ -23,7 +23,7 @@ module.exports = {
 							_attr: { t: "#"}
 						},
 						{
-							playtext: 'Press 1  if you are a MALE.\n OR\n Press 2 followed by # if you are a FEMALE.'
+							playtext: 'Press 1  if you are a MALE.\n OR\n Press 2 if you are a FEMALE.'
 						}
 					]}]
 				};
@@ -84,25 +84,25 @@ module.exports = {
     					]}]
     				};
 
-            // if(data){
-            //   var age = parseInt(data);
-            //   if(age>18){
-            //     res = {
-          	// 			response:
-          	// 			[{
-          	// 				playtext: 'You are an ADULT.'
-          	// 			}]
-          	// 		};
-            //   }
-            //   else{
-            //     res = {
-          	// 			response:
-          	// 			[{
-          	// 				playtext: 'Minors are NOT ALLOWED.'
-          	// 			}]
-          	// 		};
-            //   }
-            // }
+            if(data){
+              var age = parseInt(data);
+              if(age==1){
+                res = {
+          				response:
+          				[{
+          					playtext: 'You are an ADULT.'
+          				}]
+          			};
+              }
+              else{
+                res = {
+          				response:
+          				[{
+          					playtext: 'Minors are NOT ALLOWED.'
+          				}]
+          			};
+              }
+            }
 
           }
         }
