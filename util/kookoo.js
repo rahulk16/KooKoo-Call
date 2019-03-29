@@ -16,140 +16,140 @@ module.exports = {
 				res = {
 					response:
 					[{
-						playtext: 'Welcome to Rail Jaankaaaree.'
+						playtext: 'Welcome to Galaxy Card.'
 					},
 					{
 						collectdtmf: [ {
 							_attr: { t: "#"}
 						},
 						{
-							playtext: 'Please enter 5 digit train number followed by #'
+							playtext: 'Press 1 followed by # if you are a male or Press 2 followed by # if you are a female.'
 						}
 					]}]
 				};
 			}
-			else if(event == 'GotDTMF'){
-				var trainId = req.query.sid.split('$')[1];
-				if(trainId || data) {
-					console.log('SID:: ', req.query.sid);
-					if (trainId) {
-						var trainDay = parseInt(data);
-						if(trainDay || trainDay == 0) {
-							if(trainDay == 1 || trainDay == 2 || trainDay == 3) {
-								var day = ['Yesterday', 'Today', 'Tomorrow'];
-								res = {
-									response:
-									[{
-										playtext: train.getTrainStatus(trainId, trainDay)
-									}]
-								};
-							} else {
-								res = {
-									response :
-									[{
-										_attr: { sid: cid + "$" + trainId }
-									},
-									{
-										playtext: "Sorry, wrong input received."
-									},
-									{
-										collectdtmf: [{
-											_attr: { t: "#"}
-										},
-										{
-											playtext: 'Please select the date of journey followed by #'
-										},
-										{
-											playtext: '1 for yesterday, 2 for today, 3 for tomorrow'
-										}]
-									}]
-								};
-							}
-						} else {
-							res = {
-								response :
-								[{
-									_attr: { sid: cid + "$" + trainId }
-								},
-								{
-									playtext: "Sorry, no input received."
-								},
-								{
-									collectdtmf: [{
-										_attr: { t: "#"}
-									},
-									{
-										playtext: 'Please select the date of journey followed by #'
-									}, {
-										playtext: '1 for yesterday, 2 for today, 3 for tomorrow'
-									}]
-								}]
-							};
-						}
-					} else if (data.length == 5){
-						var trainId = train.getTrainID(data);
-						if(trainId) {
-							res = {
-								response:
-								[{
-									_attr: { sid: cid + "$" + trainId }
-								},
-								{
-									collectdtmf: [{
-										_attr: { t: "#"}
-									},
-									{
-										playtext: 'Please select the date of journey followed by #'
-									}, {
-										playtext: '1 for yesterday, 2 for today, 3 for tomorrow'
-									}]
-								}]
-							};
-						} else {
-							res = {
-								response:
-								[{
-									collectdtmf: [{
-										_attr: { t: "#"}
-									},
-									{
-										playtext: 'Sorry, no train found by this train number, Please enter the correct 5 digit train number followed by #.'
-									}]
-								}]
-							};
-						}
-					}
-					else{
-						res = {
-							response:
-							[{
-								collectdtmf: [{
-									_attr: { t: "#"}
-								},
-								{
-									playtext: 'Please enter the correct 5 digit train number followed by #.'
-								}]
-							}]
-						};
-					}
-				}
-				else {
-					res = {
-						response:
-						[{
-							playtext: 'You have not entered anything'
-						},
-						{
-							collectdtmf: [{
-								_attr: { t: "#"}
-							},
-							{
-								playtext: 'Please enter 5 digit train number followed by #.'
-							}]
-						}]
-					};
-				}
-			}
+			// else if(event == 'GotDTMF'){
+			// 	var trainId = req.query.sid.split('$')[1];
+			// 	if(trainId || data) {
+			// 		console.log('SID:: ', req.query.sid);
+			// 		if (trainId) {
+			// 			var trainDay = parseInt(data);
+			// 			if(trainDay || trainDay == 0) {
+			// 				if(trainDay == 1 || trainDay == 2 || trainDay == 3) {
+			// 					var day = ['Yesterday', 'Today', 'Tomorrow'];
+			// 					res = {
+			// 						response:
+			// 						[{
+			// 							playtext: train.getTrainStatus(trainId, trainDay)
+			// 						}]
+			// 					};
+			// 				} else {
+			// 					res = {
+			// 						response :
+			// 						[{
+			// 							_attr: { sid: cid + "$" + trainId }
+			// 						},
+			// 						{
+			// 							playtext: "Sorry, wrong input received."
+			// 						},
+			// 						{
+			// 							collectdtmf: [{
+			// 								_attr: { t: "#"}
+			// 							},
+			// 							{
+			// 								playtext: 'Please select the date of journey followed by #'
+			// 							},
+			// 							{
+			// 								playtext: '1 for yesterday, 2 for today, 3 for tomorrow'
+			// 							}]
+			// 						}]
+			// 					};
+			// 				}
+			// 			} else {
+			// 				res = {
+			// 					response :
+			// 					[{
+			// 						_attr: { sid: cid + "$" + trainId }
+			// 					},
+			// 					{
+			// 						playtext: "Sorry, no input received."
+			// 					},
+			// 					{
+			// 						collectdtmf: [{
+			// 							_attr: { t: "#"}
+			// 						},
+			// 						{
+			// 							playtext: 'Please select the date of journey followed by #'
+			// 						}, {
+			// 							playtext: '1 for yesterday, 2 for today, 3 for tomorrow'
+			// 						}]
+			// 					}]
+			// 				};
+			// 			}
+			// 		} else if (data.length == 5){
+			// 			var trainId = train.getTrainID(data);
+			// 			if(trainId) {
+			// 				res = {
+			// 					response:
+			// 					[{
+			// 						_attr: { sid: cid + "$" + trainId }
+			// 					},
+			// 					{
+			// 						collectdtmf: [{
+			// 							_attr: { t: "#"}
+			// 						},
+			// 						{
+			// 							playtext: 'Please select the date of journey followed by #'
+			// 						}, {
+			// 							playtext: '1 for yesterday, 2 for today, 3 for tomorrow'
+			// 						}]
+			// 					}]
+			// 				};
+			// 			} else {
+			// 				res = {
+			// 					response:
+			// 					[{
+			// 						collectdtmf: [{
+			// 							_attr: { t: "#"}
+			// 						},
+			// 						{
+			// 							playtext: 'Sorry, no train found by this train number, Please enter the correct 5 digit train number followed by #.'
+			// 						}]
+			// 					}]
+			// 				};
+			// 			}
+			// 		}
+			// 		else{
+			// 			res = {
+			// 				response:
+			// 				[{
+			// 					collectdtmf: [{
+			// 						_attr: { t: "#"}
+			// 					},
+			// 					{
+			// 						playtext: 'Please enter the correct 5 digit train number followed by #.'
+			// 					}]
+			// 				}]
+			// 			};
+			// 		}
+			// 	}
+			// 	else {
+			// 		res = {
+			// 			response:
+			// 			[{
+			// 				playtext: 'You have not entered anything'
+			// 			},
+			// 			{
+			// 				collectdtmf: [{
+			// 					_attr: { t: "#"}
+			// 				},
+			// 				{
+			// 					playtext: 'Please enter 5 digit train number followed by #.'
+			// 				}]
+			// 			}]
+			// 		};
+			// 	}
+			// }
 		}
 		else {
 			res = {
