@@ -23,7 +23,7 @@ module.exports = {
 							_attr: { t: "#"}
 						},
 						{
-							playtext: 'Press 1 followed by # if you are a male OR\n\n Press 2 followed by # if you are a female.'
+							playtext: 'Press 1  if you are a MALE.\n OR\n Press 2 followed by # if you are a FEMALE.'
 						}
 					]}]
 				};
@@ -43,30 +43,30 @@ module.exports = {
     							_attr: { t: "#"}
     						},
     						{
-    							playtext: 'Press 1 followed by # if you are above 21 years OR\n\n Press 2 followed by # if you are below 21 years.'
+    							playtext: 'Press 1 if you are above 21 years OR\n\n Press 2 if you are below 21 years.'
     						}
     					]}]
     				};
 
-            // if(data){
-            //   var age = parseInt(data);
-            //   if(age>21){
-            //     res = {
-          	// 			response:
-          	// 			[{
-          	// 				playtext: 'You are an ADULT.'
-          	// 			}]
-          	// 		};
-            //   }
-            //   else{
-            //     res = {
-          	// 			response:
-          	// 			[{
-          	// 				playtext: 'Minors are NOT ALLOWED.'
-          	// 			}]
-          	// 		};
-            //   }
-            // }
+            if(data){
+              var age = parseInt(data);
+              if(age>21){
+                res = {
+          				response:
+          				[{
+          					playtext: 'You are an ADULT.'
+          				}]
+          			};
+              }
+              else{
+                res = {
+          				response:
+          				[{
+          					playtext: 'Minors are NOT ALLOWED.'
+          				}]
+          			};
+              }
+            }
           }
           if(gender==2){ //female
             res = {
@@ -79,7 +79,7 @@ module.exports = {
     							_attr: { t: "#"}
     						},
     						{
-    							playtext: 'Press 1 followed by # if you are above 18 years OR\n\n Press 2 followed by # if you are below 18 years.'
+    							playtext: 'Press 1 if you are above 18 years OR\n\n Press 2 if you are below 18 years.'
     						}
     					]}]
     				};
