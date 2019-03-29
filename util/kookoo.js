@@ -8,7 +8,7 @@ function getXMLResponse(response) {
 module.exports = {
 	getXMLBody : function createResponse(req) {
 		var event = req.query.event;
-		var data = req.query.data || '';
+		// var data = req.query.data || '';
 		// var cid = req.query.cid;
 		var res;
 		if(event){
@@ -28,12 +28,10 @@ module.exports = {
 					]}]
 				};
 			}
-
+			const data = req.query.data;
       else if(event=='GotDTMF'){
-				// var data = req.query.data || '';
         if(data){
           var gender = parseInt(data);
-					// data = '';
           if(gender==1){ //male
             res = {
     					response:
@@ -49,10 +47,10 @@ module.exports = {
     						}
     					]}]
     				};
-						var data1 = req.query.data;
+						const data1 = req.query.data;
             if(data1){
-              var age = parseInt(data1);
-              if(age==1){
+              var mage = parseInt(data1);
+              if(mage==1){
                 res = {
           				response:
           				[{
@@ -86,10 +84,10 @@ module.exports = {
     						}
     					]}]
     				};
-						data2 = req.query.data;
+						const data2 = req.query.data;
             if(data2){
-              var age = parseInt(data2);
-              if(age==1){
+              var fage = parseInt(data2);
+              if(fage==1){
                 res = {
           				response:
           				[{
