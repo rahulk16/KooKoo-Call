@@ -9,7 +9,7 @@ module.exports = {
 	getXMLBody : function createResponse(req) {
 		var event = req.query.event;
 		var data = req.query.data || '';
-		var cid = req.query.cid;
+		// var cid = req.query.cid;
 		var res;
 		if(event){
 			if (event == 'NewCall') {
@@ -23,11 +23,50 @@ module.exports = {
 							_attr: { t: "#"}
 						},
 						{
-							playtext: 'Press 1 followed by # if you are a male or\n Press 2 followed by # if you are a female.'
+							playtext: 'Press 1 followed by # if you are a male OR\n\n Press 2 followed by # if you are a female.'
 						}
 					]}]
 				};
 			}
+
+      else if(event=='GotDTMF'){
+        if(data){
+          var gender = parseInt(data);
+          if(gender==1){ //male
+            res = {
+    					response:
+    					[{
+    						playtext: 'You selected for MALE.'
+    					},
+    					{
+    						collectdtmf: [ {
+    							_attr: { t: "#"}
+    						},
+    						{
+    							playtext: 'Press 1 followed by # if you are above 21 years OR\n\n Press 2 followed by # if you are below 21 years.'
+    						}
+    					]}]
+    				};
+          }
+          if(gender==2){ //female
+            res = {
+    					response:
+    					[{
+    						playtext: 'You selected for FEMALE.'
+    					},
+    					{
+    						collectdtmf: [ {
+    							_attr: { t: "#"}
+    						},
+    						{
+    							playtext: 'Press 1 followed by # if you are above 18 years OR\n\n Press 2 followed by # if you are below 18 years.'
+    						}
+    					]}]
+    				};
+
+          }
+        }
+      }
 			// else if(event == 'GotDTMF'){
 			// 	var trainId = req.query.sid.split('$')[1];
 			// 	if(trainId || data) {
