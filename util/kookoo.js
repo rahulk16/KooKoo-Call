@@ -23,7 +23,7 @@ module.exports = {
 							_attr: { t: "#"}
 						},
 						{
-							playtext: 'Press 1 followed by # if you are a male or Press 2 followed by # if you are a female.'
+							playtext: 'Press 1 followed by # if you are a male or\n Press 2 followed by # if you are a female.'
 						}
 					]}]
 				};
