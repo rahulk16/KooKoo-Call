@@ -33,7 +33,7 @@ module.exports = {
 				// var data = req.query.data || '';
         if(data){
           var gender = parseInt(data);
-					data = '';
+					// data = '';
           if(gender==1){ //male
             res = {
     					response:
@@ -49,9 +49,9 @@ module.exports = {
     						}
     					]}]
     				};
-						data = req.query.data;
-            if(data){
-              var age = parseInt(data);
+						var data1 = req.query.data;
+            if(data1){
+              var age = parseInt(data1);
               if(age==1){
                 res = {
           				response:
@@ -86,9 +86,9 @@ module.exports = {
     						}
     					]}]
     				};
-						data = req.query.data;
-            if(data){
-              var age = parseInt(data);
+						data2 = req.query.data;
+            if(data2){
+              var age = parseInt(data2);
               if(age==1){
                 res = {
           				response:
