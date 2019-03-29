@@ -35,6 +35,7 @@ module.exports = {
           var gender = parseInt(data);
 					data = '';
           if(gender==1){ //male
+						gender = null;
             res = {
     					response:
     					[{
