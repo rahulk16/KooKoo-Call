@@ -33,7 +33,7 @@ module.exports = {
       else if(event=='GotDTMF'){
         if(data){
           var gender = parseInt(data);
-					var sid = req.query.sid;
+					data = '';
           if(gender==1){ //male
             res = {
     					response:
@@ -42,7 +42,8 @@ module.exports = {
     					},
     					]
     				};
-
+						data = null;
+						data = req.query.data;
 						if(data){
 							var mage = parseInt(data);
               if(mage==1){
