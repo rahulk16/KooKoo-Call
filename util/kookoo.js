@@ -38,19 +38,9 @@ module.exports = {
             res = {
     					response:
     					[{
-								_attr: { sid: cid + "$" + gender }
-							},
-								{
     						playtext: 'You selected for MALE.'
     					},
-    					{
-    						collectdtmf: [ {
-    							_attr: { t: "#"}
-    						},
-    						{
-    							playtext: 'Press 1 if you are above 21 years OR\n\n Press 2 if you are below 21 years.'
-    						}
-    					]}]
+    					]
     				};
 
 						if(data){
@@ -59,16 +49,28 @@ module.exports = {
                 res = {
           				response:
           				[{
+		    						collectdtmf: [ {
+		    							_attr: { t: "#"}
+		    						},
+										{
           					playtext: 'You are an ADULT.'
-          				}]
+          				}
+		    					]}
+										]
           			};
               }
               else{
                 res = {
           				response:
           				[{
+		    						collectdtmf: [ {
+		    							_attr: { t: "#"}
+		    						},
+										{
           					playtext: 'Minors are NOT ALLOWED.'
-          				}]
+          				}
+		    					]}
+										]
           			};
               }
 
@@ -80,9 +82,6 @@ module.exports = {
             res = {
     					response:
     					[{
-								_attr: { sid: cid + "$" + gender }
-							},
-								{
     						playtext: 'You selected for FEMALE.'
     					},
     					{
