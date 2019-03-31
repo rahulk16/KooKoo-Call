@@ -64,7 +64,7 @@ module.exports = {
 										]
           			};
               }
-              else{
+             if(mage==0){
                 res = {
           				response:
           				[{
@@ -75,7 +75,7 @@ module.exports = {
               }
 
 						}
-
+						gender = null;
           }
 
         else if(gender==2){ //female
@@ -104,7 +104,7 @@ module.exports = {
           				}]
           			};
               }
-              else{
+               if(fage==0){
                 res = {
           				response:
           				[{
