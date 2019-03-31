@@ -33,9 +33,7 @@ module.exports = {
       else if(event=='GotDTMF'){
         if(data){
           var gender = parseInt(data);
-					data = '';
           if(gender==1){ //male
-						gender = null;
             res = {
     					response:
     					[{
@@ -45,19 +43,19 @@ module.exports = {
 									_attr: { t: "#"}
 								},
 								{
-								playtext: 'Press 1 if you are above 21'
+								playtext: 'Press 9 if you are above 21'
 							},
 							{
-								playtext: 'Press 2 if you are below 21'
+								playtext: 'Press 0 if you are below 21'
 							}
 							]}
     					]
     				};
-						data = null;
-						data1 = req.query.data1;
-						if(data1){
-							var mage = parseInt(data1);
-              if(mage==1){
+
+
+						if(data){
+							var mage = parseInt(data);
+              if(mage==9){
                 res = {
           				response:
           				[{
@@ -91,14 +89,14 @@ module.exports = {
     							_attr: { t: "#"}
     						},
     						{
-    							playtext: 'Press 1 if you are above 18 years OR\n\n Press 2 if you are below 18 years.'
+    							playtext: 'Press 9 if you are above 18 years OR\n\n Press 0 if you are below 18 years.'
     						}
     					]}]
     				};
 
 						if(data){
 							var fage = parseInt(data);
-              if(fage==1){
+              if(fage==9){
                 res = {
           				response:
           				[{
