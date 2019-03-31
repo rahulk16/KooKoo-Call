@@ -75,7 +75,6 @@ module.exports = {
               }
 
 						}
-						gender = null;
           }
 
         else if(gender==2){ //female
