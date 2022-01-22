@@ -14,9 +14,3 @@ To use this application:
     Application Pin:97680
 
   **Follow the instruction as per the application instructions
-
-  Thank you for your time and providing me this task. I enjoyed it.
-  I would appreciate the opportunity to communicate with you.
-  Name - Rahul Kumar
-  Email Id - rahul.k16@iiits.in
-  Mob No: 7763025362, 8789083646
